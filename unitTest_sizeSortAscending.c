@@ -36,15 +36,21 @@ void unitTest_sizeSortAscending(){
   
   file1.stbuf.st_size=100;
   file2.stbuf.st_size=200;
+  
+  result=sizeSortAscending(&file1,&file2);
+  TEST(result<0);
 
-  TEST(sizeSortAscending(&file1,&file2)<0);
+  file1.stbuf.st_size=200;
+  
+  result =sizeSortAscending(&file1,&file2);
+  TEST(result==0);
 
 
 }
 
 int main(){
  (void)fprintf(stdout,"Running tests for sizeSortAscending.\n");
- testsizeSortAscending();
+ unitTest_sizeSortAscending();
  (void)fprintf(stdout,"Done running tests!\n");
 
  return 0;

@@ -29,6 +29,7 @@ testsetDisplayMode(){
   int argc;
   char* argv[10];
   
+  //Test 1
   argc=2;
   argv[0]="fileName";
   argv[1]="-a";
@@ -38,6 +39,8 @@ testsetDisplayMode(){
   printf("\n%d\n",result);
   TEST(result==AFLAG);
   
+
+  //Test 2
   optind=1;
   result=0;
   argc=4;
@@ -53,10 +56,11 @@ testsetDisplayMode(){
   TEST(result&AFLAG==AFLAG);
 
 
+  //Test 3
   optind=1;
   result=0;
   argc=2;
-  argv[1]="-z";
+  argv[1]="-x";
   result=setDisplayMode(argc,argv);
 
   TEST(result==ERR_FLAG);
