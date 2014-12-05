@@ -107,7 +107,7 @@ buildFileInfoTable(const char *filename, struct fileInfo ** const tablePtr){
        fileCpy=file;
        file=realloc(file,sizeof(struct fileInfo)*(count+1));
 
-       if(file==malloc(sizeof(struct fileInfo))){
+       if(file==NULL){
          (void)fprintf(stderr,STR_ALLOC_ERR);
          (void)fprintf(stderr,STR_PARTIAL_INFO);
          (void)strncpy(fileCpy[count].name,subDir->d_name,MAXNAMLEN);
