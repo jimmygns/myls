@@ -14,12 +14,15 @@
  * Funciton prototype: int sizeSortAscending( const void *p1, const 
  *                                            void *p2);
  * Description : Compares size of two files
- * Parameters: arg 1: const void *p1 is a pointer to the value of st_size
- * 	       arg 2: const void *p2 is a pointer to the value of st_size	
+ * Parameters: arg 1: const void *p1 is a pointer to the first fileInfo struct
+ * 	       arg 2: const void *p2 is a pointer to the second fileInfo struct	
  * Side Effects: none
  * Error Conditions: none
  * Resturn Value: int
  */
+
+
+
 sizeSortAscending:
 	
 	set	offset,%o2
