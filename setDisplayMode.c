@@ -25,7 +25,7 @@
  *              and set the necessary flags in an unsigned int variable by turning on bits 
  *              of this variable to signify which command line options have been entered.
  * Parameters: int argc, char* argv[] 
- * Side Effects: Outputs the int result with all the bits set accordingly
+ * Side Effects: none
  * Error Conditions: When the input commands are not recognized, errflag would be set.
  * Return Value: result that stores all the flags parsed from command line.
  */
@@ -67,10 +67,7 @@ setDisplayMode(int argc, char* argv[]){
       default:
         result=result|ERR_FLAG;
         return result;
-        break;
     }
-
-
   }
 
 return result;

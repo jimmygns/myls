@@ -1,0 +1,189 @@
+/*
+ * Filename: README
+ * Author: jinye xu
+ * Userid: cs30xen
+ * Date: 12/7/2014
+ */ 
+
+
+Description:
+  
+  This program takes command line input and functions like linux command line
+options. It checks the input and displays the information of files or directory
+depending on the input. The valid options are alrSB. See the description of each 
+option as following:  
+
+        -a   List all entries, including those files that begin with a
+	     dot (.), which are normally not listed.
+
+    	-l   List in  long  format,  giving  mode,  ACL  indication,
+             number  of links, owner, group, size in bytes, and time
+             of last modification for each file.
+
+        -r   Reverse the order of sort to get reverse alphabetic  or
+             oldest first as appropriate.
+
+        -S   Sort by file size (largest first) instead of by name. 
+             The default is descending order (largest to smallest).
+
+        -B   Ignore backups. Do not list implied entries ending with ~
+  
+
+How to compile;
+
+  To compile this program, I put all the source files in the same directory
+and type "make" which should initiate the makefile and compile everything.
+
+How to run:
+
+  To run this program, either type the excutatble name followed the names
+of directories or files that you want information for. Or no argument which
+will then take the current directory as the input.
+
+
+  For example:
+  	
+	./myls -l
+	./myls -lSB directoryname
+	./myls -al filename1 filename 2
+
+  
+Normal output:
+
+	Normal ouput will be printed to hte terminal. An example of normal output
+would be the following:
+
+[cs30xen@ieng9]:pa4:523$ ./myls -lSr
+.:
+----------   1 cs30xen  cs30x          0 Dec  6 17:23 no_permissions_file
+--rw-r----   1 cs30xen  cs30x          0 Dec  6 17:23 empty_file
+--rw-r----   1 cs30xen  cs30x        156 Dec  3 17:35 global.c
+--rw-r----   1 cs30xen  cs30x        176 Dec  6 17:23 normal_file
+--rw-r----   1 cs30xen  cs30x        362 Dec  7 20:46 globals.c
+--rw-r----   1 cs30xen  cs30x        453 Dec  3 15:11 test.h
+--rw-r----   1 cs30xen  cs30x        592 Dec  7 20:14 nameSortAscending.o
+--rw-r----   1 cs30xen  cs30x        604 Dec  7 15:33 sizeSortAscending.o
+--rw-r----   1 cs30xen  cs30x        671 Dec  6 16:19 strings.h
+--rw-r----   1 cs30xen  cs30x        792 Dec  5 20:27 sizeSortAscending.s
+--rw-r----   1 cs30xen  cs30x        795 Dec  7 15:47 displayGroupName.s
+--rw-r----   1 cs30xen  cs30x        797 Dec  7 16:40 nameSortAscending.s
+--rw-r----   1 cs30xen  cs30x        880 Dec  7 15:47 displayGroupName.o
+--rw-r----   1 cs30xen  cs30x        924 Dec  7 15:40 displayOwnerName.c
+--rw-r----   1 cs30xen  cs30x        953 Dec  4 14:59 unitTest_sizeSortAscending.c
+--rw-r----   1 cs30xen  cs30x       1032 Dec  7 20:33 README
+--rw-r----   1 cs30xen  cs30x       1034 Dec  7 15:40 nameSortDescending.c
+--rw-r----   1 cs30xen  cs30x       1058 Dec  7 15:41 sizeSortDescending.c
+--rw-r----   1 cs30xen  cs30x       1101 Dec  3 20:18 unitTest_setDisplayMode.c
+--rw-r----   1 cs30xen  cs30x       1162 Dec  6 16:19 myls.h
+--rw-r----   1 cs30xen  cs30x       1232 Dec  1 23:22 ref_buildFileInfoTable.o
+--rw-r----   1 cs30xen  cs30x       1459 Dec  7 16:38 myls.c
+--rw-r----   1 cs30xen  cs30x       1508 Dec  7 20:46 globals.o
+--rw-r----   1 cs30xen  cs30x       1573 Dec  7 15:33 setDisplayMode.c
+--rw-r----   1 cs30xen  cs30x       1636 Dec  7 15:40 displayPermissions.c
+--rw-r----   1 cs30xen  cs30x       2072 Dec  3 14:56 unitTest_buildFileInfoTable.c
+--rw-r----   1 cs30xen  cs30x       2879 Dec  3 21:55 Makefile
+--rw-r----   1 cs30xen  cs30x       3225 Dec  7 20:25 buildFileInfoTable.c
+--rw-r----   1 cs30xen  cs30x       3244 Dec  7 15:41 sizeSortDescending.o
+--rw-r----   1 cs30xen  cs30x       3336 Dec  7 15:41 nameSortDescending.o
+--rw-r----   1 cs30xen  cs30x       3440 Dec  7 15:41 displayOwnerName.o
+--rw-r----   1 cs30xen  cs30x       3712 Dec  7 15:33 setDisplayMode.o
+dxrwxr----   2 cs30xen  cs30x       4096 Dec  6 23:31 pa4inside
+--rw-r----   1 cs30xen  cs30x       4196 Dec  7 20:46 displayFileInfo.c
+--rw-r----   1 cs30xen  cs30x       4596 Dec  7 15:41 displayPermissions.o
+--rw-r----   1 cs30xen  cs30x       5040 Dec  7 20:14 myls.o
+--rw-r----   1 cs30xen  cs30x       7360 Dec  7 20:36 buildFileInfoTable.o
+--rw-r----   1 cs30xen  cs30x       8124 Dec  7 20:46 displayFileInfo.o
+-xrwxr----   1 cs30xen  cs30x      11192 Dec  4 14:59 unitTest_sizeSortAscending
+-xrwxr----   1 cs30xen  cs30x      12028 Nov 29 18:19 pa4test
+-xrwxr----   1 cs30xen  cs30x      12384 Dec  4 10:59 unitTest_setDisplayMode
+-xrwxr----   1 cs30xen  cs30x      19332 Dec  6 17:23 unitTest_buildFileInfoTable
+-xrwxr----   1 cs30xen  cs30x      31692 Dec  7 20:46 myls
+--rw-r----   1 cs30xen  cs30x      46289 Dec  7 20:46 globals.ln
+--rw-r----   1 cs30xen  cs30x      52373 Dec  7 15:33 setDisplayMode.ln
+--rw-r----   1 cs30xen  cs30x      52426 Dec  7 15:41 sizeSortDescending.ln
+--rw-r----   1 cs30xen  cs30x      52520 Dec  7 15:41 nameSortDescending.ln
+--rw-r----   1 cs30xen  cs30x      53234 Dec  7 20:14 myls.ln
+--rw-r----   1 cs30xen  cs30x      53617 Dec  7 15:41 displayPermissions.ln
+--rw-r----   1 cs30xen  cs30x      54138 Dec  7 15:41 displayOwnerName.ln
+--rw-r----   1 cs30xen  cs30x      54459 Dec  7 20:36 buildFileInfoTable.ln
+--rw-r----   1 cs30xen  cs30x      64220 Dec  7 20:46 displayFileInfo.ln
+--rw------   1 cs30xen  cs30x    2384084 Dec  7 16:01 core
+[cs30xen@ieng9]:pa4:524$ ./myls -lS 
+.:
+--rw------   1 cs30xen  cs30x    2384084 Dec  7 16:01 core
+--rw-r----   1 cs30xen  cs30x      64220 Dec  7 20:46 displayFileInfo.ln
+--rw-r----   1 cs30xen  cs30x      54459 Dec  7 20:36 buildFileInfoTable.ln
+--rw-r----   1 cs30xen  cs30x      54138 Dec  7 15:41 displayOwnerName.ln
+--rw-r----   1 cs30xen  cs30x      53617 Dec  7 15:41 displayPermissions.ln
+--rw-r----   1 cs30xen  cs30x      53234 Dec  7 20:14 myls.ln
+--rw-r----   1 cs30xen  cs30x      52520 Dec  7 15:41 nameSortDescending.ln
+--rw-r----   1 cs30xen  cs30x      52426 Dec  7 15:41 sizeSortDescending.ln
+--rw-r----   1 cs30xen  cs30x      52373 Dec  7 15:33 setDisplayMode.ln
+--rw-r----   1 cs30xen  cs30x      46289 Dec  7 20:46 globals.ln
+-xrwxr----   1 cs30xen  cs30x      31692 Dec  7 20:46 myls
+-xrwxr----   1 cs30xen  cs30x      19332 Dec  6 17:23 unitTest_buildFileInfoTable
+-xrwxr----   1 cs30xen  cs30x      12384 Dec  4 10:59 unitTest_setDisplayMode
+-xrwxr----   1 cs30xen  cs30x      12028 Nov 29 18:19 pa4test
+-xrwxr----   1 cs30xen  cs30x      11192 Dec  4 14:59 unitTest_sizeSortAscending
+--rw-r----   1 cs30xen  cs30x       8124 Dec  7 20:46 displayFileInfo.o
+--rw-r----   1 cs30xen  cs30x       7360 Dec  7 20:36 buildFileInfoTable.o
+--rw-r----   1 cs30xen  cs30x       5040 Dec  7 20:14 myls.o
+--rw-r----   1 cs30xen  cs30x       4596 Dec  7 15:41 displayPermissions.o
+--rw-r----   1 cs30xen  cs30x       4196 Dec  7 20:46 displayFileInfo.c
+dxrwxr----   2 cs30xen  cs30x       4096 Dec  6 23:31 pa4inside
+--rw-r----   1 cs30xen  cs30x       3712 Dec  7 15:33 setDisplayMode.o
+--rw-r----   1 cs30xen  cs30x       3440 Dec  7 15:41 displayOwnerName.o
+--rw-r----   1 cs30xen  cs30x       3336 Dec  7 15:41 nameSortDescending.o
+--rw-r----   1 cs30xen  cs30x       3244 Dec  7 15:41 sizeSortDescending.o
+--rw-r----   1 cs30xen  cs30x       3225 Dec  7 20:25 buildFileInfoTable.c
+--rw-r----   1 cs30xen  cs30x       2879 Dec  3 21:55 Makefile
+--rw-r----   1 cs30xen  cs30x       2072 Dec  3 14:56 unitTest_buildFileInfoTable.c
+--rw-r----   1 cs30xen  cs30x       1636 Dec  7 15:40 displayPermissions.c
+--rw-r----   1 cs30xen  cs30x       1573 Dec  7 15:33 setDisplayMode.c
+--rw-r----   1 cs30xen  cs30x       1508 Dec  7 20:46 globals.o
+--rw-r----   1 cs30xen  cs30x       1459 Dec  7 16:38 myls.c
+--rw-r----   1 cs30xen  cs30x       1232 Dec  1 23:22 ref_buildFileInfoTable.o
+--rw-r----   1 cs30xen  cs30x       1162 Dec  6 16:19 myls.h
+--rw-r----   1 cs30xen  cs30x       1101 Dec  3 20:18 unitTest_setDisplayMode.c
+--rw-r----   1 cs30xen  cs30x       1058 Dec  7 15:41 sizeSortDescending.c
+--rw-r----   1 cs30xen  cs30x       1034 Dec  7 15:40 nameSortDescending.c
+--rw-r----   1 cs30xen  cs30x       1032 Dec  7 20:33 README
+--rw-r----   1 cs30xen  cs30x        953 Dec  4 14:59 unitTest_sizeSortAscending.c
+--rw-r----   1 cs30xen  cs30x        924 Dec  7 15:40 displayOwnerName.c
+--rw-r----   1 cs30xen  cs30x        880 Dec  7 15:47 displayGroupName.o
+--rw-r----   1 cs30xen  cs30x        797 Dec  7 16:40 nameSortAscending.s
+--rw-r----   1 cs30xen  cs30x        795 Dec  7 15:47 displayGroupName.s
+--rw-r----   1 cs30xen  cs30x        792 Dec  5 20:27 sizeSortAscending.s
+--rw-r----   1 cs30xen  cs30x        671 Dec  6 16:19 strings.h
+--rw-r----   1 cs30xen  cs30x        604 Dec  7 15:33 sizeSortAscending.o
+--rw-r----   1 cs30xen  cs30x        592 Dec  7 20:14 nameSortAscending.o
+--rw-r----   1 cs30xen  cs30x        453 Dec  3 15:11 test.h
+--rw-r----   1 cs30xen  cs30x        362 Dec  7 20:46 globals.c
+--rw-r----   1 cs30xen  cs30x        176 Dec  6 17:23 normal_file
+--rw-r----   1 cs30xen  cs30x        156 Dec  3 17:35 global.c
+--rw-r----   1 cs30xen  cs30x          0 Dec  6 17:23 empty_file
+----------   1 cs30xen  cs30x          0 Dec  6 17:23 no_permissions_file
+
+Abnormal output:
+
+  Error messages would be printed to the terminal when the command line input is
+not recognized or when the filename or directory doesn't exist. When these happen
+usage error will be printed along with some extra error messages.
+
+	This is an example:
+
+        [cs30xen@ieng9]:pa4:526$ ./myls -z 
+        ./myls: illegal option -- z
+         Usage: ./myls [-alrSB] [file ...]
+
+Testing: 
+
+Unit testing for some of the files have been included
+unitTest_setDisplayMode.c
+unitTest_buildFileInfoTable.c
+unitTest_sizeSortAscending.c
+for testing the functions setDisplayMode, buildFileInfoTable and sizeSortAscending.
+To run the testers, for example, just type make run_unitTest_buildFileInfoTable.
+into the command line. The result should be self-explanatory.
+
+And pa4test is also a good way to check if the output matches the standard one.

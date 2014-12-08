@@ -13,7 +13,7 @@
 
 #include "strings.h"
 #include "myls.h"
-#include "global.c"
+#include "globals.c"
 
 
 /*
@@ -33,8 +33,8 @@ sizeSortDescending(const void *p1, const void *p2){
   
   int result=0;
 
-  result=((struct fileInfo* )p2).stbuf.st_size -
-         ((struct fileInfo* )p1).stbuf.st_size;
+  result=((struct fileInfo* )p2)->stbuf.st_size -
+         ((struct fileInfo* )p1)->stbuf.st_size;
   return result;
 
 }

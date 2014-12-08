@@ -12,7 +12,7 @@
 
 #include "strings.h"
 #include "myls.h"
-#include "global.c"
+#include "globals.c"
 
 /* 
  * Function name: nameSortDescending()
@@ -29,8 +29,8 @@
 int nameSortDescending(const void *p1, const void *p2){
   int result=0;
 
-  result=strcmp(((struct fileInfo* )p2).name,
-         ((struct fileInfo* )p1).name);
+  result=strcmp(((struct fileInfo* )p2)->name,
+         ((struct fileInfo* )p1)->name);
   
   
   return result;

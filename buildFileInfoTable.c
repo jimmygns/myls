@@ -73,6 +73,7 @@ buildFileInfoTable(const char *filename, struct fileInfo ** const tablePtr){
   if(S_ISDIR(stbuf.st_mode)==1){
     dir=opendir(filename);
     
+    (void)fprintf(stdout,"%s:\n",filename);
     //cannot open the directory(directory err)
     if(dir==NULL){
       (void)fprintf(stderr,STR_OPENDIR_ERR);
@@ -92,9 +93,9 @@ buildFileInfoTable(const char *filename, struct fileInfo ** const tablePtr){
        char str[MAXNAMLEN];
        char *strPtr;
        struct fileInfo *fileCpy;
-       strncpy(str,filename,MAXNAMLEN);
-       strcat(str,"/");
-       strcat(str,subDir->d_name);
+       (void)strncpy(str,filename,MAXNAMLEN);
+       (void)strcat(str,"/");
+       (void)strcat(str,subDir->d_name);
        strPtr=str; 
 
        if(lstat(str,&stbuf)==-1){
@@ -113,6 +114,7 @@ buildFileInfoTable(const char *filename, struct fileInfo ** const tablePtr){
          (void)strncpy(fileCpy[count].name,subDir->d_name,MAXNAMLEN);
          fileCpy[count].stbuf=stbuf;
          *tablePtr=fileCpy;
+         (void)closedir(dir);
          return count;
        }
        
@@ -124,6 +126,7 @@ buildFileInfoTable(const char *filename, struct fileInfo ** const tablePtr){
 
     }
     //end of the while loop
+    (void)closedir(dir);
     *tablePtr=file;
     return count;
 
