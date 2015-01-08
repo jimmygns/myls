@@ -21,4 +21,4 @@
 #include "myls.h"
 #include "test.h"
 
-int offset;
+extern int offset;
