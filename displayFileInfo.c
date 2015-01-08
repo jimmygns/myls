@@ -44,7 +44,7 @@
  * Error Conditions: When err_flag is set. usage error message will be printed
  * Return Value: none
  */
-
+int offset=0;
   void 
 displayFileInfo(struct fileInfo * const table, const int entries
     , const int displayMode)
